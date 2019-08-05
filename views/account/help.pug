@@ -1,0 +1,45 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        meta(http-equiv='X-UA-Compatible', content='ie=edge')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js')
+        link(href='./css/chat.css', rel='stylesheet')
+        title Help
+    body
+        form(action="/help" method="POST")
+            input(type="hidden" name="_csrf" value=`${csrfToken}`)
+            #aos-chat
+                h2 Help Tab
+                #chat-window
+                    #output
+                    #feedback
+                input#baslik(type='text', placeholder='Başlık')
+                input#mesaj(type='text', placeholder='Mesaj')
+                button#gonder Gönder
+            script(src='./chat.js')
+
+
+
+//extends ../layouts/main-layout.pug
+//
+//block styles
+//    link(rel="stylesheet" href="/css/forms.css")
+//
+//block content
+//
+//    if errorMessage
+//        div.alert.alert-danger.col-sm-7 #{errorMessage}
+//
+//    form(action="/help" method="POST")
+//        input(type="hidden" name="_csrf" value=`${csrfToken}`)
+//        .form-group.row
+//            label(for="email").col-sm-2.col-form-label Email
+//            .col-sm-10
+//                input.form-control#email(type="text" name="email")
+//
+//        .form-group.row
+//            .col-sm-10.offset-sm-2
+//                input(type="submit" value="Submit").btn.btn-primary
+
