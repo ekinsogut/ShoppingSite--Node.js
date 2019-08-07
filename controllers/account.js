@@ -200,7 +200,7 @@ exports.getNewPassword = (req,res,next) => {
     const token = req.params.token;
 
     User.findOne({ resetToken: token, resetTokenExpiration: {
-        $gt: Date.now() //şimdi ki tarihten daha büyük bi tarih varsa süresi geçmemiz bi tokena sahibiz.
+        $gt: Date.now() //şimdi ki tarihten daha büyük bi tarih varsa süresi geçmemiş bi tokena sahibiz.
         }
     }).then(user => {
         res.render("account/new-password" , {
