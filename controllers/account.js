@@ -5,7 +5,7 @@ const sgMail = require('@sendgrid/mail');
 const crypto = require("crypto");
 
 //----------------------------------------------------------------------------
-sgMail.setApiKey("-----------");
+sgMail.setApiKey("-----------"); // SendGrid Account Link
 //----------------------------------------------------------------------------
 exports.getLogin = (req,res,next) => {
     const errorMessage = req.session.errorMessage;
