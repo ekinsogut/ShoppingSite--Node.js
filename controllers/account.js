@@ -5,7 +5,7 @@ const sgMail = require('@sendgrid/mail');
 const crypto = require("crypto");
 
 //----------------------------------------------------------------------------
-sgMail.setApiKey("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");
+sgMail.setApiKey("-----------");
 //----------------------------------------------------------------------------
 exports.getLogin = (req,res,next) => {
     const errorMessage = req.session.errorMessage;
@@ -33,7 +33,7 @@ exports.postLogin = (req,res,next) => {
             User.findOne({email:email})
                 .then(user => {
                     if (!user) {
-                        req.session.errorMessage = "Bu mail adresi ile bir kayıt bulunamamıştır!";
+                        req.session.errorMessage = "Email not found!";
                         req.session.save(function (err) {
                             console.log(err);
                             return res.redirect("/login");

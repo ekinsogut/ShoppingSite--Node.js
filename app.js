@@ -21,8 +21,10 @@ const socket = require('socket.io');
 
 const errorController = require('./controllers/errors');
 
+require("dotenv").config();
+
 const User = require('./models/user');
-const ConnectionString = "mongodb+srv://ekinsogut:OUyca16ngMNxHzws@cluster0-jlyaj.mongodb.net/test?retryWrites=true&w=majority";
+const ConnectionString = process.env.MONGO_DB_ATLAS_API;
 
 var store = new mongoDbStore({
     uri: ConnectionString,
