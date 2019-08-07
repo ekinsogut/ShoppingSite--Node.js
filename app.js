@@ -24,11 +24,8 @@ const errorController = require('./controllers/errors');
 require("dotenv").config();
 
 const User = require('./models/user');
-<<<<<<< HEAD
 const ConnectionString = process.env.MONGO_DB_ATLAS_API;
-=======
-const ConnectionString = "----------"; // Mongo Atlas Account Link
->>>>>>> 725b982a7547edca430df3febb65eebb89be7d46
+
 
 var store = new mongoDbStore({
     uri: ConnectionString,
@@ -41,7 +38,7 @@ const storage = multer.diskStorage({
     },
     filename: function (req,file,cb) {
         cb(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname));
-        //resimlere benzersiz isimler verme
+
     }
 });
 
