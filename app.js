@@ -22,7 +22,7 @@ const socket = require('socket.io');
 const errorController = require('./controllers/errors');
 
 const User = require('./models/user');
-const ConnectionString = "----------";
+const ConnectionString = "----------"; // Mongo Atlas Account Link
 
 var store = new mongoDbStore({
     uri: ConnectionString,
